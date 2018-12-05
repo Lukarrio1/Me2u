@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary sticky-top">
+  <a class="navbar-brand text-white" href="../index.php">ME2U</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+      </li>
+      <li class="nav-item">
+        <a class="nav-link  text-white" href="../user/contact.php">CONTACTS</a>
+          </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle  text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <?php if(isset($_SESSION['user'])){
+          echo $_SESSION['user']['username'];
+         }else{
+         echo "Login/Register";
+         }?>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <?php if(!isset($_SESSION['user'])){?>
+          <a class="dropdown-item" href="../user/login.php">Login</a>
+          <?php } if(!isset($_SESSION['user'])){?>
+          <a class="dropdown-item" href="../user/sign-up.php">register</a>
+          <?php }?>
+          <?php if(isset($_SESSION['user'])){ ?>
+          <div class="dropdown-divider"></div>
+          <a href="../user/profile.php" class="dropdown-item">Profile</a>
+          <a class="dropdown-item" id="logout" href="../controller/LogoutController.php">logout</a>
+          <?php } ?>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0 ">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search" autocomplete="off"> 
+    </form>
+  </div>
+</nav>
+<div class="col-lg-3 invisible offset-lg-9 pr-4 ">
+<div class="card">
+hellot
+</div>
+</div>
+
+
