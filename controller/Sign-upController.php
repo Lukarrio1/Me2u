@@ -7,7 +7,7 @@ $errorname= 1;
 $erroremail=1;
 $checkemail =1;
 $errorpassword =1;
-$user = sanitize($_POST['user']);
+$user = sanitize(strtolower($_POST['user']));
 $email = sanitize($_POST['email']);
 $retype_password =sanitize($_POST['retype_password']);
 $password =sanitize($_POST['password']);
@@ -38,6 +38,7 @@ $login = mysqli_fetch_assoc($login_qry);
 $_SESSION['user']= $login;
 $user= "user".$_SESSION['user']['id'];
 $table_sql = "CREATE TABLE $user(
+email varchar(50),
 userid int(20),
 ID int NOT NULL AUTO_INCREMENT,
 PRIMARY KEY (ID)

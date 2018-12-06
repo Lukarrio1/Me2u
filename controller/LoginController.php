@@ -10,7 +10,6 @@ if(isset($_POST['login'])){
       $login_sql = "SELECT * FROM user WHERE email='$email' AND password='$password'";
       $login_qry = mysqli_query($Connect ,$login_sql);
       $login = mysqli_fetch_assoc($login_qry);
-    //   echo json_encode($login);
       if(mysqli_num_rows($login_qry)<1){
       exit("null");
       }else{

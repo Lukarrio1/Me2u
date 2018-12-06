@@ -8,10 +8,12 @@ Search
 </span>
 </div>
 <div class="card-body">
-<input type="text" class="form-control" id="search" aria-describedby="emailHelp" placeholder="Enter email">
+<input type="text" class="form-control" id="search"  placeholder="find a friend.....">
 </div>
 </div>
 </div>
-<?php }
+<?php }else{
+    header('location:../user/login.php');
+}
 include("../includes/footer.php");
 ?>

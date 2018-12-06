@@ -4,7 +4,8 @@ if(!isset($_SESSION['user'])){?>
 <div class="card rounded shadow">
 <div class="card-body">
 <div class="card-header text-center bg-white">
-<span class="h2 text-primary">Password-Reset</span>
+<span class="h2 text-primary">Password-Reset</span><br>
+<span class="text-danger" id="mes_failed"></span>
 </div>
 <form>
 <div class="form-group">

@@ -46,7 +46,7 @@ Search
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="#" id="pro-link"><i class="fa fa-user" aria-hidden="true"></i> Profile</a>
     <a class="dropdown-item" href="#" id="logout" >
-    <i class="fa fa-sign-in" aria-hidden="true"></i> logout</a>
+    <i class="fa fa-sign-out" aria-hidden="true"></i> logout</a>
   </div>
 </div>
 <?php }?>
