@@ -13,6 +13,11 @@ ME2U &#x00A9; 2018
     <script  src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script type="text/javascript">
     $(document).ready(function () {
+      // active users
+      $.get("../controller/ActiveController.php", function(data){
+       var user= jQuery.parseJSON(data);
+      //  $("#active-user").html("<a href='../user/search.php'>"+user.email+"</a>");
+      })
       // entry key
       $("#reset_confirm").on("click", function(){
         var key = $("#res_key").val();
@@ -87,10 +92,12 @@ ME2U &#x00A9; 2018
           },
           dataType: "text",
           success: function (response) {
-            console.log(response);
+              console.log(response);
+            $("#search-result").html(response);
           }
         });
       })
+   
       // Reset
       $("#reset-link").on("click",function(){
         window.location="../user/email-link.php";

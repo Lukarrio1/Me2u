@@ -11,6 +11,7 @@ Search
 <input type="text" class="form-control" id="search"  placeholder="find a friend.....">
 </div>
 </div>
+<div class="h5" id="search-result"></div>
 </div>
 <?php }else{
     header('location:../user/login.php');
