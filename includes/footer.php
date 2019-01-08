@@ -16,7 +16,10 @@ ME2U &#x00A9; 2018
       // active users
       $.get("../controller/ActiveController.php", function(data){
        var user= jQuery.parseJSON(data);
-      //  $("#active-user").html("<a href='../user/search.php'>"+user.email+"</a>");
+       console.log(user);
+       $.each(user, function() {
+        $("#active-user").html("<a href='../user/view.php?show="+user.id+"'>"+user.username+"</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i class='fa fa-circle' aria-hidden='true'></i>");
+       });
       })
       // entry key
       $("#reset_confirm").on("click", function(){
